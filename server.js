@@ -21,7 +21,7 @@ function forwardRequest(url, res, bodyCallback) {
 
 app.get('/', function(req, res) {
     console.log(req.url);
-    forwardRequest('http://news.at.zhihu.com/api/1.2/news/latest', res, function(body) {
+    forwardRequest('http://news.at.zhihu.com/api/4/news/latest', res, function(body) {
         var json = JSON.parse(body);
         json.news.concat(json.top_stories).forEach(function(item, idx) {
             item.items.forEach(function(e) {
